@@ -21,6 +21,7 @@ Sub ConvertTrackChangesToHardline()
     Call SaveAs_Hardline(wdDoc)
 
 End Sub
+
 Sub TrackChangesToHardline_Single(wdDoc As Document)
     'Converts tracked changes to hardline - single underline, single strikethrough.
     Dim rev As Word.Revision
@@ -35,6 +36,7 @@ Sub TrackChangesToHardline_Single(wdDoc As Document)
     Next
     wdDoc.AcceptAllRevisions
 End Sub
+
 Sub TrackChangesToHardline_Double(wdDoc As Document)
     'Converts tracked changes to hardline - double underline, double strikethrough.
     Dim rev As Word.Revision
@@ -49,6 +51,7 @@ Sub TrackChangesToHardline_Double(wdDoc As Document)
     Next
     wdDoc.AcceptAllRevisions
 End Sub
+
 Sub RemoveAddedAndDeleted(wdDoc As Document)
     'Removes text that was added and also deleted in the same tracked changes session, for both single and double lines.
     'For example, if Person A added text and Person B deleted it, the text would be removed.
@@ -84,6 +87,7 @@ Sub RemoveAddedAndDeleted(wdDoc As Document)
     End With
     rng.Find.Execute Replace:=wdReplaceAll
 End Sub
+
 Sub SaveAs_Hardline(wdDoc As Document)
     Dim docName As String
     'Append filename with:
